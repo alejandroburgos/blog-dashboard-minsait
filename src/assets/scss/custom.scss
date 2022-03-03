@@ -115,7 +115,7 @@ body {
     align-items: center;
     padding: 2px 4px;
 
-    width: 53px;
+    width: 80px;
     height: 21px;
   }
   .badge-stadistics-down {
@@ -126,7 +126,43 @@ body {
     align-items: center;
     padding: 2px 4px;
 
-    width: 53px;
+    width: 80px;
     height: 21px;
+  }
+}
+
+//Chart
+.chart {
+  button {
+    background: #ffffff;
+    padding: 8px;
+    padding-left: 30px;
+    color: #0c4284;
+    width: 142px;
+    height: 40px;
+
+    font-weight: 600;
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: url(/assets/images/icon/date.svg) no-repeat scroll 7px 7px;
+  }
+}
+
+//table
+.table {
+  button {
+    background: #ffffff;
+    padding: 8px;
+    padding-left: 30px;
+    color: #0c4284;
+    width: 142px;
+    height: 40px;
+
+    font-weight: 600;
+    border: 1px solid #dddddd;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background: url(/assets/images/icon/filter.svg) no-repeat scroll 7px 7px;
   }
 }

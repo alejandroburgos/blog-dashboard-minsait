@@ -1,18 +1,23 @@
-import React, { useState, useEffect } from "react";
-import { NavLink as NavLinkRRD, Link } from "react-router-dom";
-import { PropTypes } from "prop-types";
+import React from "react";
 
-import { Container, Card, Button, Grid, List, ListItem } from "@mui/material";
+import { Card, Button, List, ListItem } from "@mui/material";
 
 import logo from "../assets/images/Dasdas Logo 1.svg";
 import iconDashboard from "../assets/images/icon/iconDashboard.svg";
 import iconChats from "../assets/images/icon/chart.svg";
+import iconDocuments from "../assets/images/icon/documents.svg";
+import iconBlog from "../assets/images/icon/post.svg";
+import iconMessage from "../assets/images/icon/message.svg";
+import iconUsers from "../assets/images/icon/user.svg";
+import iconSettings from "../assets/images/icon/settings.svg";
+import iconLogout from "../assets/images/icon/logout.svg";
+
 export const Sidebar = (props) => {
   let icon;
 
   return (
     <>
-      <Card className="p-0 " style={{ minHeight: window.innerHeight }}>
+      <Card className="p-0 " style={{ minHeight: "100%" }}>
         <div className="text-center">
           <img
             className="p-4 text-center"
@@ -31,6 +36,24 @@ export const Sidebar = (props) => {
                 break;
               case "Chats":
                 icon = iconChats;
+                break;
+              case "Documents":
+                icon = iconDocuments;
+                break;
+              case "Blog":
+                icon = iconBlog;
+                break;
+              case "Message":
+                icon = iconMessage;
+                break;
+              case "Users":
+                icon = iconUsers;
+                break;
+              case "Settings":
+                icon = iconSettings;
+                break;
+              case "Log Out":
+                icon = iconLogout;
                 break;
               default:
                 break;

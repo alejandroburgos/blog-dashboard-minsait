@@ -46,7 +46,7 @@ var routes = [
   },
   {
     path: "/",
-    name: "Log out",
+    name: "Log Out",
     component: Index,
     layout: "/",
   },

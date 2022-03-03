@@ -1,13 +1,27 @@
 import React from "react";
 import ApexChart from "react-apexcharts";
-import { Divider } from "@mui/material";
+import { Grid, Divider } from "@mui/material";
 
 export const Chart = ({ crypto }) => {
   const historical_coin_chart = {
     series: [
       {
-        name: "Desktops",
-        data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+        name: crypto?.[0].id,
+        data: [
+          Number(crypto?.[0].price).toFixed(2),
+          Number(crypto?.[0].price - crypto?.[0]["1d"]?.price_change).toFixed(
+            2
+          ),
+          Number(crypto?.[0].price - crypto?.[0]["7d"]?.price_change).toFixed(
+            2
+          ),
+          Number(crypto?.[0].price - crypto?.[0]["30d"]?.price_change).toFixed(
+            2
+          ),
+          Number(crypto?.[0].price - crypto?.[0]["365d"]?.price_change).toFixed(
+            2
+          ),
+        ],
       },
     ],
     options: {
@@ -33,31 +47,44 @@ export const Chart = ({ crypto }) => {
       },
       xaxis: {
         categories: [
-          "Jan",
-          "Feb",
-          "Mar",
-          "Apr",
-          "May",
-          "Jun",
-          "Jul",
-          "Aug",
-          "Sep",
+          "Last Year",
+          "Last 30 Days",
+          "Last 7 Days",
+          "Last Day",
+          "Actual",
         ],
       },
     },
   };
   return (
     <div className="p-4">
-      <Divider className="m-4" />
-      <div>
-        <h5>View Statistic</h5>
-      </div>
-      <ApexChart
-        options={historical_coin_chart.options}
-        series={historical_coin_chart.series}
-        type="line"
-        height={350}
-      />
+      <Grid container>
+        <Grid item md={12}>
+          <Grid
+            item
+            className="d-flex flex-column flex-md-row justify-content-start"
+          >
+            <h5>View Statistic</h5>
+          </Grid>
+          <Grid
+            item
+            className=" chart d-flex flex-column flex-md-row justify-content-end mb-4"
+          >
+            <button value="Yesterday">Yesterday</button>
+          </Grid>
+
+          <Divider />
+        </Grid>
+
+        <Grid item md={12}>
+          <ApexChart
+            options={historical_coin_chart.options}
+            series={historical_coin_chart.series}
+            type="line"
+            height={350}
+          />
+        </Grid>
+      </Grid>
     </div>
   );
 };
