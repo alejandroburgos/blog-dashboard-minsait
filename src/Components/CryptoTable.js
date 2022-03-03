@@ -98,33 +98,19 @@ function createData(name, post, tech, num1, num2, color) {
 }
 
 const rows = [
+  createData("Css Perfomance", "Development", "Frontend", 190, 1.33, "#fe5000"),
+  createData("UI Design", "Design", null, 452, 253, "#06f"),
+  createData("React Hooks", "React", "Javascript", 262, 19.0, "#a0d153"),
   createData(
     "Css Perfomance",
     "Development",
     "Frontend",
     190,
-    174.3213,
-    "#fe5000"
-  ),
-  createData("UI Design", "Design", null, 452.987, 252.213, "#06f"),
-  createData("React Hooks", "React", "Javascript", 262.988, 169.0, "#a0d153"),
-  createData(
-    "Css Perfomance",
-    "Development",
-    "Frontend",
-    190,
-    44444,
+    444,
     3213,
     "#fe9000"
   ),
-  createData(
-    "UI Design",
-    "Development",
-    "Frontend",
-    22222233.987,
-    3333.3333,
-    "#06ffff"
-  ),
+  createData("UI Design", "Development", "Frontend", 233.9, 33.3, "#06ffff"),
   createData(
     "React Hooks",
     "Development",
@@ -217,12 +203,24 @@ export const CryptoTable = () => {
                 </TableCell>
 
                 <TableCell style={{ width: 160 }} align="right">
-                  <img src={iconBook} alt="icon up" />
-                  {row.num1}
+                  <div className="d-flex">
+                    <img
+                      style={{ marginRight: "5px" }}
+                      src={iconBook}
+                      alt="icon up"
+                    />
+                    {row.num1}
+                  </div>
                 </TableCell>
                 <TableCell style={{ width: 160 }} align="right">
-                  <img src={iconView} alt="icon up" />
-                  {row.num2}
+                  <div className="d-flex">
+                    <img
+                      src={iconView}
+                      alt="icon up"
+                      style={{ marginRight: "5px" }}
+                    />
+                    {row.num2}
+                  </div>
                 </TableCell>
               </TableRow>
             ))}
