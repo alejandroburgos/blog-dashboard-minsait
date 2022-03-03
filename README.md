@@ -6,7 +6,9 @@ He usado la API api.nomics.com para recoger la criptomoneda ETH y así mostrarla
 
 ## Librerias
 Estilo: Material UI (MUI) y Bootstrap
+
 Gráficos: ApexChart
+
 Rutas (entre comillas): react-router-dom
 
 
