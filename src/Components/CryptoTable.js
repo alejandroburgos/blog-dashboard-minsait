@@ -171,7 +171,7 @@ export const CryptoTable = () => {
           item
           className=" table d-flex flex-column flex-md-row justify-content-end mb-4"
         >
-          <button value="Yesterday">Yesterday</button>
+          <button value="Yesterday">View</button>
         </Grid>
 
         <Divider />
