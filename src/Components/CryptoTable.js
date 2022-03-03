@@ -22,6 +22,7 @@ import Stack from "@mui/material/Stack";
 
 import iconBook from "../assets/images/icon/book.svg";
 import iconView from "../assets/images/icon/view.svg";
+import { Badge } from "react-bootstrap";
 
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -92,23 +93,52 @@ TablePaginationActions.propTypes = {
   rowsPerPage: PropTypes.number.isRequired,
 };
 
-function createData(name, num1, num2, color) {
-  return { name, num1, num2, color };
+function createData(name, post, tech, num1, num2, color) {
+  return { name, post, tech, num1, num2, color };
 }
 
 const rows = [
-  createData("Css Perfomance", 190, 174.3213, "#fe5000"),
-  createData("UI Design", 452.987, 252.213, "#06f"),
-  createData("React Hooks", 262.988, 169.0, "#a0d153"),
-  createData("Css Perfomance", 190, 44444, 3213, "#fe9000"),
-  createData("UI Design", 22222233.987, 3333.3333, "#06ffff"),
-  createData("React Hooks", 22111.11, 3333333.0, "#a00000"),
-  createData("Css Perfomance", 9900077, 2222, "#fff000"),
-  createData("UI Design", 777.88888, 252.213, "#06f"),
-  createData("React Hooks", 22222.988, 3333.0, "#a0d153"),
-  createData("Css Perfomance", 190, 174, "#aa9000"),
-  createData("UI Design", 452.987, 252.213, "#06f"),
-  createData("React Hooks", 262.988, 169.0, "#44ff00"),
+  createData(
+    "Css Perfomance",
+    "Development",
+    "Frontend",
+    190,
+    174.3213,
+    "#fe5000"
+  ),
+  createData("UI Design", "Design", null, 452.987, 252.213, "#06f"),
+  createData("React Hooks", "React", "Javascript", 262.988, 169.0, "#a0d153"),
+  createData(
+    "Css Perfomance",
+    "Development",
+    "Frontend",
+    190,
+    44444,
+    3213,
+    "#fe9000"
+  ),
+  createData(
+    "UI Design",
+    "Development",
+    "Frontend",
+    22222233.987,
+    3333.3333,
+    "#06ffff"
+  ),
+  createData(
+    "React Hooks",
+    "Development",
+    null,
+    22111.11,
+    3333333.0,
+    "#a00000"
+  ),
+  createData("Css Perfomance", "Development", null, 9900077, 2222, "#fff000"),
+  createData("UI Design", "Development", null, 777.88888, 252.213, "#06f"),
+  createData("React Hooks", "Development", null, 22222.988, 3333.0, "#a0d153"),
+  createData("Css Perfomance", "Development", null, 190, 174, "#aa9000"),
+  createData("UI Design", "Development", null, 452.987, 252.213, "#06f"),
+  createData("React Hooks", "Development", null, 262.988, 169.0, "#44ff00"),
 ].sort((a, b) => (a.calories < b.calories ? -1 : 1));
 
 export const CryptoTable = () => {
@@ -171,6 +201,21 @@ export const CryptoTable = () => {
                     </small>
                   </div>
                 </TableCell>
+
+                <TableCell className="table " component="th" scope="row">
+                  <div className="d-flex">
+                    <Badge bg="danger">
+                      <span>{row.post}</span>
+                    </Badge>
+
+                    {row.tech && (
+                      <Badge bg="info" className="badge-blue">
+                        <span>{row.tech}</span>
+                      </Badge>
+                    )}
+                  </div>
+                </TableCell>
+
                 <TableCell style={{ width: 160 }} align="right">
                   <img src={iconBook} alt="icon up" />
                   {row.num1}
