@@ -1,4 +1,4 @@
-# Prueba técnica - Dashboard
+# Prueba técnica React Hooks - Dashboard
 ![image](https://user-images.githubusercontent.com/38127649/156620319-70b4dd50-7580-40c0-8fe9-ca7169e3aa99.png)
 
 ## API Seleccionada
@@ -12,7 +12,6 @@ Gráficos: ApexChart
 Rutas (entre comillas): react-router-dom
 
 
-###################################################################
 
 # Getting Started with Create React App
 
