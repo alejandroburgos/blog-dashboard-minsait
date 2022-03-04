@@ -3,6 +3,12 @@ import ApexChart from "react-apexcharts";
 import { Grid, Divider } from "@mui/material";
 
 export const Chart = ({ crypto }) => {
+
+  const priceLastYear = Number(parseFloat(crypto?.[0].price) + parseFloat(crypto?.[0]["365d"]?.price_change)).toFixed(
+    2
+  )
+
+  console.log(priceLastYear)
   const historical_coin_chart = {
     series: [
       {
@@ -18,9 +24,8 @@ export const Chart = ({ crypto }) => {
           Number(crypto?.[0].price - crypto?.[0]["30d"]?.price_change).toFixed(
             2
           ),
-          Number(crypto?.[0].price - crypto?.[0]["365d"]?.price_change).toFixed(
-            2
-          ),
+          priceLastYear
+          ,
         ],
       },
     ],
